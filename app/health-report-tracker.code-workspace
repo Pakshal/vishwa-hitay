@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../kv-read/health-report-tracker"
+		},
+		{
+			"path": "../../../kv-read/RegistrationForm"
+		},
+		{
+			"path": "../../jyot-event-registration-production"
+		},
+		{
+			"path": ".."
+		}
+	]
+}

@@ -1,0 +1,5 @@
+import { Box, Button, Container, Flex, Grid, Heading, Text } from '@chakra-ui/react';
+import SiteShell from '../../components/SiteShell';
+import PageHeader from '../../components/PageHeader';
+
+export default function EventsPage() { return <SiteShell><PageHeader eyebrow="Events" title="Gather. Question. Grow.">Join conversations and learning experiences that connect enduring wisdom with the world we inhabit.</PageHeader><Container maxW="1050px" py={16}><Grid templateColumns={{ base: '1fr', md: '170px 1fr auto' }} gap={8} alignItems="center" borderY="1px solid" borderColor="brand.mist" py={9}><Box><Text color="brand.saffron" fontFamily="mono" fontSize="11px">UPCOMING</Text><Heading mt={2} fontSize="28px" fontWeight="400">To be announced</Heading></Box><Box><Heading fontSize="31px" fontWeight="400">The next Vishwa Dialogue</Heading><Text mt={3} color="#625b52">A live exchange on leadership, responsibility and human flourishing. Subscribe to receive the first invitation.</Text></Box><Button variant="gold">Notify me</Button></Grid></Container></SiteShell>; }
