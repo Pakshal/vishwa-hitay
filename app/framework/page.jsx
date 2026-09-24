@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Container, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import SiteShell from '../../components/SiteShell';
 import PageHeader from '../../components/PageHeader';
 import { pillars } from '../../lib/content';
@@ -6,12 +6,9 @@ import { pillars } from '../../lib/content';
 function PillarCard({ pillar, dark }) {
   return (
     <Box bg={dark ? 'brand.navy' : 'brand.white'} color={dark ? 'brand.white' : 'brand.navy'} p={{ base: 7, md: 9 }} minH={{ md: '390px' }} display="flex" flexDirection="column" border="1px solid" borderColor={dark ? 'rgba(255,255,255,.1)' : 'brand.mist'}>
-      <Flex justify="space-between" align="center">
-        <Text fontFamily="mono" color="brand.gold" fontSize="11px">{pillar.number}</Text>
-        <Text color={dark ? 'rgba(255,255,255,.45)' : 'brand.saffron'} fontSize="9px" letterSpacing=".13em" textTransform="uppercase">{pillar.group}</Text>
-      </Flex>
+      <Text color={dark ? 'brand.gold' : 'brand.saffron'} fontSize="16px" fontWeight="700" letterSpacing=".06em" textTransform="uppercase">{pillar.group}</Text>
       <Heading mt={10} fontSize={{ base: '30px', md: '34px' }} fontWeight="400" lineHeight="1.1">{pillar.title}</Heading>
-      <Text mt={6} color={dark ? 'rgba(255,255,255,.65)' : '#625b52'} fontSize="14px" lineHeight="1.85">{pillar.description}</Text>
+      <Text mt={6} color={dark ? 'rgba(255,255,255,.65)' : '#625b52'} fontSize="16px" lineHeight="1.85">{pillar.description}</Text>
     </Box>
   );
 }
@@ -32,7 +29,7 @@ export default function FrameworkPage() {
 
       <Box bg="brand.parchment" py={{ base: 14, md: 20 }}>
         <Container maxW="1240px">
-          <Text color="brand.saffron" fontSize="10px" fontWeight="700" letterSpacing=".18em" textTransform="uppercase">01 — From the individual outward</Text>
+          <Text color="brand.saffron" fontSize={{ base: '16px', md: '20px' }} fontWeight="700" letterSpacing=".1em" textTransform="uppercase">From the individual outward</Text>
           <Heading mt={3} mb={9} fontSize={{ base: '38px', md: '50px' }} fontWeight="400">Three expanding units of life</Heading>
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing="1px" bg="brand.mist">{units.map(pillar => <PillarCard key={pillar.number} pillar={pillar} />)}</SimpleGrid>
         </Container>
@@ -40,16 +37,16 @@ export default function FrameworkPage() {
 
       <Box bg="brand.ink" py={{ base: 14, md: 20 }}>
         <Container maxW="1240px">
-          <Text color="brand.gold" fontSize="10px" fontWeight="700" letterSpacing=".18em" textTransform="uppercase">02 — Across every level</Text>
+          <Text color="brand.gold" fontSize={{ base: '16px', md: '20px' }} fontWeight="700" letterSpacing=".1em" textTransform="uppercase">Across every level</Text>
           <Heading color="brand.white" mt={3} mb={9} fontSize={{ base: '38px', md: '50px' }} fontWeight="400">Three forces that shape life</Heading>
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing="1px" bg="rgba(255,255,255,.1)">{forces.map(pillar => <PillarCard key={pillar.number} pillar={pillar} dark />)}</SimpleGrid>
         </Container>
       </Box>
 
       <Container maxW="900px" py={{ base: 16, md: 22 }} textAlign="center">
-        <Text color="brand.saffron" fontSize="10px" fontWeight="700" letterSpacing=".18em" textTransform="uppercase">One larger vision</Text>
-        <Heading mt={5} fontSize={{ base: '35px', md: '48px' }} fontWeight="400" lineHeight="1.2">Six interconnected dimensions for applying civilisational wisdom to modern life.</Heading>
-        <Text mt={7} color="#625b52" lineHeight="1.9">Together, these pillars help us understand how civilisational wisdom can guide the individual, strengthen the family, improve society, shape ethical prosperity, direct technology responsibly, and contribute to global well-being.</Text>
+        <Heading color="brand.saffron" fontSize={{ base: '28px', md: '36px' }} fontWeight="400">One larger vision</Heading>
+        <Text mt={5} fontSize="18px" lineHeight="1.9" color="#625b52">Six interconnected dimensions for applying civilisational wisdom to modern life.</Text>
+        <Text mt={5} fontSize="18px" color="#625b52" lineHeight="1.9">Together, these pillars help us understand how civilisational wisdom can guide the individual, strengthen the family, improve society, shape ethical prosperity, direct technology responsibly, and contribute to global well-being.</Text>
       </Container>
     </SiteShell>
   );
