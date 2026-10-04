@@ -14,7 +14,7 @@ export default function Home() {
         <Box position="absolute" w={{ base: '300px', md: '540px' }} h={{ base: '300px', md: '540px' }} border="1px solid rgba(201,168,76,.11)" borderRadius="full" right={{ base: '-200px', md: '-150px' }} top={{ base: '-20px', md: '-140px' }} />
         <Container maxW="1240px" py={{ base: 20, md: 28 }} position="relative">
           <Grid templateColumns={{ base: '1fr', lg: '1.25fr .75fr' }} gap={14} alignItems="end">
-            <Box><Eyebrow light fontSize={{ base: '16px', md: '20px' }} letterSpacing=".12em" lineHeight="1.5">Ideas for human flourishing</Eyebrow><Heading mt={7} fontWeight="300" fontSize={{ base: '54px', md: '86px', xl: '96px' }} lineHeight=".91" letterSpacing="-.03em">Ancient wisdom.<br /><Box as="span" color="brand.gold" fontStyle="italic">Modern clarity.</Box></Heading></Box>
+            <Box textAlign="left" minW={0}><Eyebrow light fontSize={{ base: '16px', md: '20px' }} letterSpacing=".12em" lineHeight="1.5">Ideas for human flourishing</Eyebrow><Heading mt={7} fontWeight="300" fontSize={{ base: '54px', md: '86px', xl: '96px' }} lineHeight="1.05" letterSpacing="normal" textAlign="left"><Box as="span" display="block">Ancient wisdom.</Box><Box as="span" display="block" color="brand.gold" fontStyle="italic" position="relative" left="-.04em">Modern clarity.</Box></Heading></Box>
             <Stack spacing={7} pb={{ lg: 2 }}><Text color="rgba(253,250,245,.72)" fontSize={{ base: '17px', md: '19px' }} lineHeight="1.8">Translating civilisational wisdom into practical ideas for leadership, governance, technology and human flourishing.</Text><HStack spacing={0} gap={4} flexWrap="wrap" justify="flex-end"><Button as={NextLink} href="/about" variant="gold" rightIcon={<FiArrowRight />}>Discover Vishwa Hitay</Button><Button as={NextLink} href="/watch" variant="outlineGold" leftIcon={<FiPlay />}>Watch our stories</Button></HStack></Stack>
           </Grid>
         </Container>
@@ -26,10 +26,18 @@ export default function Home() {
 
       <Box bg="brand.navy" color="brand.white" py={{ base: 16, md: 22 }}>
         <Container maxW="1240px">
-          <Grid templateColumns={{ base: '1fr', lg: '.75fr 1.25fr' }} gap={{ base: 10, lg: 16 }} alignItems="start">
-            <Box position={{ lg: 'sticky' }} top={{ lg: '120px' }}><Eyebrow light>Six-pillar framework</Eyebrow><Heading mt={4} fontSize={{ base: '40px', md: '55px' }} fontWeight="400" lineHeight="1.05">One vision.<br />Six dimensions.</Heading><Text mt={6} color="rgba(255,255,255,.62)" lineHeight="1.85">Three expanding units of life meet three forces that shape them—connecting the family, society, and the world with leadership, prosperity, and technology.</Text></Box>
-            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing="1px" bg="rgba(255,255,255,.12)">{pillars.map(pillar => <Box key={pillar.number} bg="brand.navy" p={7} minH="170px"><Heading mt={7} fontSize="27px" fontWeight="400">{pillar.title}</Heading></Box>)}</SimpleGrid>
-          </Grid>
+          <Box maxW="780px" mb={10}>
+            <Eyebrow light>Six-pillar framework</Eyebrow>
+            <Heading mt={4} fontSize={{ base: '40px', md: '55px' }} fontWeight="400" lineHeight="1.05">One vision. Six dimensions.</Heading>
+            <Text mt={6} color="rgba(255,255,255,.62)" lineHeight="1.85">Three expanding units of life meet three forces that shape them—connecting the family, society, and the world with leadership, prosperity, and technology.</Text>
+          </Box>
+          <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing="1px" bg="rgba(255,255,255,.12)">
+            {pillars.map(pillar => (
+              <Box key={pillar.number} bg="brand.navy" p={7} minH="170px" display="flex" alignItems="center">
+                <Heading fontSize="27px" fontWeight="400">{pillar.title}</Heading>
+              </Box>
+            ))}
+          </SimpleGrid>
           <Flex justify="flex-end" mt={8}><Button as={NextLink} href="/framework" variant="outlineGold" rightIcon={<FiArrowRight />}>Explore the framework</Button></Flex>
         </Container>
       </Box>
