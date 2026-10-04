@@ -6,8 +6,7 @@ import { pillars } from '../../lib/content';
 function PillarCard({ pillar, dark }) {
   return (
     <Box bg={dark ? 'brand.navy' : 'brand.white'} color={dark ? 'brand.white' : 'brand.navy'} p={{ base: 7, md: 9 }} minH={{ md: '390px' }} display="flex" flexDirection="column" border="1px solid" borderColor={dark ? 'rgba(255,255,255,.1)' : 'brand.mist'}>
-      <Text color={dark ? 'brand.gold' : 'brand.saffron'} fontSize="16px" fontWeight="700" letterSpacing=".06em" textTransform="uppercase">{pillar.group}</Text>
-      <Heading mt={10} fontSize={{ base: '30px', md: '34px' }} fontWeight="400" lineHeight="1.1">{pillar.title}</Heading>
+      <Heading fontSize={{ base: '30px', md: '34px' }} fontWeight="400" lineHeight="1.1">{pillar.title}</Heading>
       <Text mt={6} color={dark ? 'rgba(255,255,255,.65)' : '#625b52'} fontSize="16px" lineHeight="1.85">{pillar.description}</Text>
     </Box>
   );
@@ -18,7 +17,7 @@ export default function FrameworkPage() {
   const forces = pillars.slice(3);
   return (
     <SiteShell>
-      <PageHeader eyebrow="The Six-Pillar Framework" title="From the family to the world.">A connected framework that brings civilisational wisdom to the needs of modern life.</PageHeader>
+      <PageHeader centered eyebrow="The Six-Pillar Framework" title="From the family to the world.">A connected framework that brings civilisational wisdom to the needs of modern life.</PageHeader>
       <Container maxW="1050px" py={{ base: 14, md: 20 }}>
         <Text fontFamily="heading" color="brand.navy" fontSize={{ base: '28px', md: '38px' }} lineHeight="1.4">Vishwa Hitay looks at three expanding units of life—family, society, and the world—and three powerful forces that shape them: leadership, wealth, and technology.</Text>
         <Grid mt={10} templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={10}>
