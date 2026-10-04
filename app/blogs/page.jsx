@@ -1,18 +1,16 @@
-import NextLink from 'next/link';
-import { Badge, Button, Container, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import SiteShell from '../../components/SiteShell';
 import PageHeader from '../../components/PageHeader';
-import InfoCard from '../../components/InfoCard';
-import { blogs } from '../../lib/content';
 
 export default function BlogsPage() {
   return (
     <SiteShell>
-      <PageHeader eyebrow="Blogs" title="Essays for applied wisdom.">Sample blog cards that can later be connected to a CMS, markdown folder or database.</PageHeader>
+      <PageHeader eyebrow="Blogs" title="Essays for applied wisdom.">Reflections on civilisational wisdom and its relevance to modern life.</PageHeader>
       <Container maxW="1180px" py={14}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
-          {blogs.map((blog) => <InfoCard key={blog.slug} label={blog.category} title={blog.title}><Text mb={5}>{blog.excerpt}</Text><Button as={NextLink} href={`/blogs/${blog.slug}`} variant="gold" size="sm">Read article</Button></InfoCard>)}
-        </SimpleGrid>
+        <Box bg="brand.parchment" p={{ base: 8, md: 12 }} borderRadius="10px" textAlign="center">
+          <Heading as="h2" fontSize={{ base: '32px', md: '42px' }} fontWeight="400" color="brand.navy">Coming soon</Heading>
+          <Text mt={4} color="#625b52" fontSize="18px" lineHeight="1.8">New essays and reflections will be shared here. Stay tuned.</Text>
+        </Box>
       </Container>
     </SiteShell>
   );
